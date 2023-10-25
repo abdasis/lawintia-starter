@@ -19,7 +19,7 @@ import {create} from "zustand";
 import SidebarMenuTitle from "@/Components/SidebarMenuTitle.jsx";
 
 const useSidebarToggle = create((set) => ({
-    open: false,
+    open: true,
     setOpen: () => set((state) => ({open: !state.open})),
 }));
 const Sidebar = () => {
@@ -48,7 +48,7 @@ const Sidebar = () => {
                             </button>
                         </div>
                     </div>
-                    <div className={`sidebar-body overflow-y-auto overflow-x-hidden px-4`}>
+                    <div className={`sidebar-body relative overflow-y-auto overflow-x-hidden px-4`}>
                         <SidebarMenu>
                             <SidebarMenuTitle title="Dashboard"/>
                             <SidebarMenu.Item active icon={<IconDashboard stroke={1.5}/>} text="Dashboard"/>
