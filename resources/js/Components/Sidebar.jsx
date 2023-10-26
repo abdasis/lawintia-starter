@@ -34,8 +34,8 @@ const Sidebar = () => {
                         <div className="logo-wrapper">
                             <div
                                 className="logo flex items-center cursor-pointer hover:scale-90 gap-1 hover:rotate-3 transition-all duration-200 ease-linear">
-                                <IconAffiliateFilled className='text-blue-600' size={34}/>
-                                <h1 className={`${open ? 'hidden' : 'flex'} font-calistoga transition-all duration-500 ease-out text-3xl text-rose-600`}>Lawintia</h1>
+                                <IconAffiliateFilled className='text-blue-500' size={34}/>
+                                <h1 className={`${open ? 'hidden' : 'flex'} font-calistoga transition-all duration-500 ease-out text-3xl text-slate-600`}>Lawintia</h1>
                             </div>
                         </div>
                         <div className={`right-3 z-50 toggle-wrapper flex items-center `}>
