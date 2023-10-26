@@ -8,64 +8,68 @@ import {
     IconLamp,
     IconLogin,
     IconLogout,
-    IconReportAnalytics, IconServerBolt,
+    IconReportAnalytics, IconSchool, IconServerBolt,
     IconSettings,
-    IconSignRight,
+    IconSignRight, IconStatusChange,
     IconUserCog,
     IconWallet
 } from "@tabler/icons-react";
 import SidebarMenu from "@/Components/SidebarMenu.jsx";
 import {create} from "zustand";
 import SidebarMenuTitle from "@/Components/SidebarMenuTitle.jsx";
+import useSidebarToggle from "@/Components/SidebarToggle.jsx";
+import {Menu} from "@headlessui/react";
 
-const useSidebarToggle = create((set) => ({
-    open: true,
-    setOpen: () => set((state) => ({open: !state.open})),
-}));
+
 const Sidebar = () => {
     const {open, setOpen} = useSidebarToggle();
     return (
         <Fragment>
             <aside
-                className={`${open ? 'w-20' : 'w-72'} h-screen transition-all duration-500 overflow-hidden bg-white border-e border-e-slate-100 fixed`}>
+                className={`${open ? 'w-20' : 'w-72'} h-screen transition-all duration-500 overflow-y-hidden bg-white border-e border-e-slate-100 fixed`}>
                 <div className="sidebar flex flex-col">
                     <div
-                        className={`${open ? 'flex flex-col justify-center pt-4 gap-2' : 'flex justify-between'} sidebar-header transition-transform px-6 mb-5 items-center h-16`}>
+                        className={`${open ? 'flex flex-col justify-center pt-2 gap-2 mb-5' : 'flex justify-between'}  sidebar-header transition-transform px-6  items-center border-b border-b-slate-100 h-16`}
+                    >
                         <div className="logo-wrapper">
                             <div
                                 className="logo flex items-center cursor-pointer hover:scale-90 gap-1 hover:rotate-3 transition-all duration-200 ease-linear">
-                                <IconAffiliateFilled size={34}/>
-                                <h1 className={`${open ? 'hidden' : 'flex'} font-calistoga transition-all duration-500 ease-out text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-focus/50 text-3xl text-rose-600`}>Lawintia</h1>
+                                <IconAffiliateFilled className='text-blue-600' size={34}/>
+                                <h1 className={`${open ? 'hidden' : 'flex'} font-calistoga transition-all duration-500 ease-out text-3xl text-rose-600`}>Lawintia</h1>
                             </div>
                         </div>
                         <div className={`right-3 z-50 toggle-wrapper flex items-center `}>
                             <button onClick={setOpen}
-                                    className={`${open ? 'bg-slate-100' : 'bg-white'} p-1 rounded-md`}>
+                                    className={`${open ? 'bg-slate-100 absolute bottom-28 left-0 ms-7' : 'bg-white hover:bg-slate-100 transition-all hover:border-slate-200 duration-500'} p-1 rounded-md`}>
                                 <IconChevronsLeft
                                     size={open ? 16 : 20}
-                                    className={`${open ? 'rotate-180 transition-all duration-500 ease-in-out' : 'rotate-0 transition-all duration-500 ease-in-out'}`}
+                                    className={`${open ? ' rotate-180 transition-all duration-500 ease-in-out' : 'rotate-0 transition-all duration-500 ease-in-out'}`}
                                     stroke={1.5}/>
                             </button>
                         </div>
                     </div>
-                    <div className={`sidebar-body relative overflow-y-auto overflow-x-hidden px-4`}>
+                    <div className={`${open ? 'px-4' : 'px-6'}  sidebar-body relative flex-1 overflow-y-auto overflow-x-hidden  max-h-96 border-b border-b-slate-100`}>
                         <SidebarMenu>
                             <SidebarMenuTitle title="Dashboard"/>
-                            <SidebarMenu.Item active icon={<IconDashboard stroke={1.5}/>} text="Dashboard"/>
-                            <SidebarMenu.Item  icon={<IconCoins stroke={1.5}/>} text="Transaction"/>
-                            <SidebarMenu.Item icon={<IconWallet stroke={1.5}/>} text="Budget"/>
-                            <SidebarMenu.Item icon={<IconReportAnalytics stroke={1.5}/>} text="Statistik"/>
+                            <SidebarMenu.Item active icon={<IconDashboard stroke={1.5} size={20}/>} text="Dashboard"/>
+                            <SidebarMenu.Item  icon={<IconCoins stroke={1.5} size={20}/>} text="Transaction"/>
+                            <SidebarMenu.Item icon={<IconWallet stroke={1.5} size={20}/>} text="Budget"/>
+                            <SidebarMenu.Item icon={<IconReportAnalytics stroke={1.5} size={20}/>} text="Statistik"/>
+                            <SidebarMenu.DropdownMenu target={'pengajar'}  icon={<IconSchool stroke={1.5} size={20}/>} title={'Pengajar'}>
+                                <SidebarMenu.DropdownMenuItem link={'/'} title={'Pengajar Baru'}/>
+                                <SidebarMenu.DropdownMenuItem link='' title={'Semua Pengajar'}/>
+                            </SidebarMenu.DropdownMenu>
                             <SidebarMenuTitle title="Sistem"/>
-                            <SidebarMenu.Item icon={<IconUserCog stroke={1.5}/>} text="User"/>
-                            <SidebarMenu.Item icon={<IconServerBolt stroke={1.5}/>} text="Sync"/>
-                            <SidebarMenu.Item icon={<IconSettings stroke={1.5}/>} text="Setting"/>
+                            <SidebarMenu.Item icon={<IconUserCog stroke={1.5} size={20}/>} text="User"/>
+                            <SidebarMenu.Item icon={<IconServerBolt stroke={1.5} size={20}/>} text="Sync"/>
+                            <SidebarMenu.Item icon={<IconSettings stroke={1.5} size={20}/>} text="Setting"/>
 
                         </SidebarMenu>
                     </div>
-                    <div className="sidebar-footer absolute bottom-0 w-full mb-5">
+                    <div className="sidebar-footer absolute bottom-5 w-full max-h-40 mb-5">
                         <div className={`${open ? '' : 'px-6 mx-auto'} container `}>
                             <div
-                                className={`${open ? '' : 'bg-primary-content/40 border border-slate-200'} box-info h-auto py-3  rounded-xl text-center `}
+                                className={`${open ? '' : 'bg-sky-50 border border-slate-200'} box-info h-auto py-3  rounded-xl text-center `}
                             >
                                 <div
                                     className="avatar-box inline-flex relative rounded-full p-2 border-2 border-violet-600 bg-violet-500">
@@ -76,9 +80,9 @@ const Sidebar = () => {
                                 <p className={`${open ? 'hidden' : ''} user-name mt-2 mb-0 font-bold`}>Abd. Asis</p>
                                 <p className={`${open ? 'hidden' : ''} user-email leading-none mb-0 font-light text-sm`}>id.abdasis@gmail.com</p>
                                 <button
-                                    className={`${open ? 'hidden' : ''} btn btn-sm rounded-full hover:bg-rose-500 border-b w-44 capitalize font-light gap-1 bg-rose-600 text-white mt-3`}>
+                                    className={`${open ? 'hidden' : ''} flex items-center justify-center py-1.5 mx-auto border-b-2 border-b-rose-700 rounded-full hover:bg-rose-700 border-b w-44 capitalize font-light gap-1 bg-rose-600 text-white mt-3`}>
                                     <IconLogout size={18}/>
-                                    <span>Logout</span>
+                                    <span className='text-sm font-medium'>Logout</span>
                                 </button>
                             </div>
                         </div>
@@ -90,4 +94,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-export {useSidebarToggle}

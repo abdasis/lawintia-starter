@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {useSidebarToggle} from "./../Components/Sidebar.jsx"
+import useSidebarToggle from "@/Components/SidebarToggle.jsx";
 
 const SidebarMenuTitle = ({title}) => {
     const {open} = useSidebarToggle();

@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import Sidebar from "@/Components/Sidebar.jsx";
 import HeaderTwo from "@/Components/HeaderTwo.jsx";
-import {useSidebarToggle} from "./../Components/Sidebar.jsx"
+import useSidebarToggle from "@/Components/SidebarToggle.jsx";
 
 export default function Authenticated({user, header, children}) {
     const {open} = useSidebarToggle()

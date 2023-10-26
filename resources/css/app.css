@@ -2,3 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f6f4f4;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #E9E9E9;
+    transition: all 7000ms; /* Transisi selama 7 detik */
+
+}
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #d2d0d0;
+    transition-timing-function: ease-in-out; /* Efek transisi ease-in-out */
+
+}
