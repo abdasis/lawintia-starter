@@ -40,9 +40,9 @@ const HeaderTwo = () => {
                     <div className="section-start flex-1">
 
                     </div>
-                    <div className="section-end flex space-x-5">
+                    <div className="section-end flex items-center ">
                         <button onClick={handleToggle} type="button"
-                                className="text-slate-700 transition-all group ease-in-out duration-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-200 dark:hover:text-slate-50 dark:focus:ring-slate-200 rounded-lg text-sm p-2.5">
+                                className="text-slate-700  transition-all group ease-in-out duration-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-200 dark:hover:text-slate-50 dark:focus:ring-slate-200 rounded-full text-sm p-2.5">
                             {isDarkMode ? (
                                 <IconMoon stroke={1.5} id="theme-toggle-dark-icon"
                                           className="w-5 h-5 group-hover:rotate-90 transition-transform duration-700"/>
