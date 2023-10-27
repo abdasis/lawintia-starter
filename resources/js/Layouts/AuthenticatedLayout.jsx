@@ -8,7 +8,7 @@ export default function Authenticated({user, header, children}) {
     return (
         <div className="min-h-screen flex justify-between gap-3 bg-slate-50">
             <Sidebar/>
-            <main className={`${open ? 'ms-20' : 'ms-72 delay-300'} transition-all duration-300 flex-grow mx-auto w-full bg-slate-50`}>
+            <main className={`${open ? 'ms-20' : 'ms-64 delay-300'} transition-all duration-300 flex-grow mx-auto w-full bg-slate-50`}>
                 <HeaderTwo/>
                 <div className="container">
                     {children}

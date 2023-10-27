@@ -26,7 +26,7 @@ const Sidebar = () => {
     return (
         <Fragment>
             <aside
-                className={`${open ? 'w-20' : 'w-72'} h-screen transition-all duration-500 overflow-y-hidden bg-white border-e border-e-slate-100 fixed`}>
+                className={`${open ? 'w-20' : 'w-64'} h-screen transition-all duration-500 overflow-y-hidden bg-white border-e border-e-slate-100 fixed`}>
                 <div className="sidebar flex flex-col">
                     <div
                         className={`${open ? 'flex flex-col justify-center pt-2 gap-2 mb-5' : 'flex justify-between'}  sidebar-header transition-transform px-6  items-center border-b border-b-slate-100 h-16`}
@@ -48,7 +48,7 @@ const Sidebar = () => {
                             </button>
                         </div>
                     </div>
-                    <div className={`${open ? 'px-4' : 'px-6'}  sidebar-body relative flex-1 overflow-y-auto overflow-x-hidden  max-h-96 border-b border-b-slate-100`}>
+                    <div className={`${open ? 'px-4' : 'px-6'}  sidebar-body relative flex-1 overflow-y-auto overflow-x-hidden min-h-fit max-h-96 border-b border-b-slate-100`}>
                         <SidebarMenu>
                             <SidebarMenuTitle title="Dashboard"/>
                             <SidebarMenu.Item active icon={<IconDashboard stroke={1.5} size={20}/>} text="Dashboard"/>
@@ -66,7 +66,7 @@ const Sidebar = () => {
 
                         </SidebarMenu>
                     </div>
-                    <div className="sidebar-footer absolute bottom-5 w-full max-h-40 mb-5">
+                    <div className="sidebar-footer absolute bottom-5 w-full mb-5">
                         <div className={`${open ? '' : 'px-6 mx-auto'} container `}>
                             <div
                                 className={`${open ? '' : 'bg-sky-50 border border-slate-200'} box-info h-auto py-3  rounded-xl text-center `}

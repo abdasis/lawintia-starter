@@ -1,8 +1,8 @@
 import {create} from "zustand";
 
 const useSidebarToggle = create((set) => ({
-    open: false,
-    setOpen: () => set((state) => ({open: !state.open})),
+    isExpanded: false,
+    setExpand: () => set((state) => ({isExpanded: !state.isExpanded})),
 }));
 
 export default useSidebarToggle;
