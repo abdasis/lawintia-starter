@@ -52,9 +52,10 @@ const HeaderTwo = () => {
                             )}
                         </button>
                         <Menu as={'section'} className="box-profile relative select-none ">
-                            {({open: dropdownProfile}) => (
+                            {({open: profileDropdown}) => (
                                 <>
                                     <Menu.Button
+                                        aria-label={'profileDropdown'}
                                         className='cursor-pointer focus:ring-2 px-4 focus:ring-blue-200 group rounded-md hover:bg-slate-100 py-1.5 flex gap-2 items-center'>
                                         <div className="avatar-item">
                                             <Avatar
@@ -71,25 +72,25 @@ const HeaderTwo = () => {
                                         </div>
                                         <IconCaretDownFilled size={16} className='text-slate-500'/>
                                     </Menu.Button>
-                                    {dropdownProfile && (
-                                        <Menu.Items static as={'div'}
+                                    {profileDropdown && (
+                                        <Menu.Items static aria-labelledby="profileDropdown" id={'profileDropdown'} as={'div'}
                                                     className='bg-white absolute divide-y border border-slate-100 divide-gray-100 rounded-md mt-2 shadow w-44 dark:bg-gray-700 '>
-                                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+                                            <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                                                 <li>
                                                     <Link href={route('dashboard')}
-                                                       class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
+                                                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
                                                 </li>
                                                 <li>
                                                     <a href="#"
-                                                       class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                                                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
                                                 </li>
                                                 <li>
                                                     <a href="#"
-                                                       class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                                                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
                                                 </li>
                                                 <li>
                                                     <a href="#"
-                                                       class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                                                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
                                                         out</a>
                                                 </li>
                                             </ul>
@@ -98,6 +99,7 @@ const HeaderTwo = () => {
                                 </>
                             )}
                         </Menu>
+
                     </div>
                 </div>
             </header>
