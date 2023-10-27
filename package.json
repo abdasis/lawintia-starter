@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "@tabler/icons-react": "^2.39.0",
+        "@tanstack/react-table": "^8.10.7",
         "flowbite": "^1.8.1",
         "flowbite-react": "^0.6.4",
         "zustand": "^4.4.4"
