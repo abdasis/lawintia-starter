@@ -48,7 +48,7 @@ const Sidebar = () => {
                             </button>
                         </div>
                     </div>
-                    <div className={`${isExpanded ? 'px-4' : 'px-6'}  sidebar-body relative flex-1 overflow-y-auto overflow-x-hidden min-h-fit max-h-96 border-b border-b-slate-100`}>
+                    <div className={`${isExpanded ? 'px-4' : 'px-6'}  sidebar-body relative flex-1 overflow-y-auto overflow-x-hidden min-h-[calc(100vh-300px)] max-h-[calc(100vh-300px)] border-b border-b-slate-100`}>
                         <SidebarMenu>
 
                             <SidebarMenuTitle title="Dashboard"/>
@@ -67,8 +67,8 @@ const Sidebar = () => {
 
                         </SidebarMenu>
                     </div>
-                    <div className="sidebar-footer absolute bottom-5 w-full mb-5">
-                        <div className={`${isExpanded ? '' : 'px-6 mx-auto'} container `}>
+                    <div className="sidebar-footer flex flex-col items-center justify-center h-60 w-full">
+                        <div className={`${isExpanded ? '' : 'px-5  mx-auto'} container `}>
                             <div
                                 className={`${isExpanded ? '' : 'bg-sky-50 border border-slate-200'} box-info h-auto py-3  rounded-xl text-center `}
                             >
